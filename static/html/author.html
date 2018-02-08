@@ -1,8 +1,8 @@
 <div class="logout">
     <button ng-click="logout()">Logout</button>
 </div>
-<div class="list" ng-repeat="list in data">
-    <h3><a href="#/author/{{list.id}}">{{ list.name }}<a></h3>
+<div class="list">
+    <h3>{{ data.name }}</h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">
@@ -33,7 +33,7 @@
         </hr>
     </div>
     <ul>
-        <li ng-repeat="card in list.cards | filter:filterBy | orderBy:sortBy:reverse">
+        <li ng-repeat="card in data.cards | filter:filterBy | orderBy:sortBy:reverse">
             <scrumboard-card></scrumboard-card>
         </li>
     </ul>

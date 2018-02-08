@@ -7,16 +7,16 @@
     function CardDirective() {
         return {
             templateUrl: '/static/html/card.html',
-            restrict: 'E',
+            //restrict: 'E',
             controller: ['$scope', '$http', function($scope, $http) {
                 var url = '/scrumboard/cards/' + $scope.card.id + '/';
                 $scope.destList = $scope.list;
-                $scope.update = function() {
-                    return $http.put(
-                        url,
-                        $scope.card
-                    );
-                };
+                // $scope.update = function() {
+                //     return $http.put(
+                //         url,
+                //         $scope.card
+                //     );
+                // };
 
                 function removeCardFromList(card, list) {
                     var cards = list.cards;
