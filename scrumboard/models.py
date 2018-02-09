@@ -4,8 +4,8 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class List(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
-    firstname = models.CharField(max_length=50, null=True)
-    lastname = models.CharField(max_length=50)
+    firstname = models.CharField(max_length=50, null=True, blank=True)
+    lastname = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return "List: {}".format(self.lastname)
