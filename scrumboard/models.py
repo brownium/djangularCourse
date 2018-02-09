@@ -6,6 +6,7 @@ class List(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
     firstname = models.CharField(max_length=50, null=True, blank=True)
     lastname = models.CharField(max_length=50, null=True, blank=True)
+    about = models.CharField(max_length=5000, null=True, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.firstname, self.lastname)
