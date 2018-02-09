@@ -8,7 +8,7 @@ class List(models.Model):
     lastname = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
-        return "List: {}".format(self.lastname)
+        return "%s %s" % (self.firstname, self.lastname)
 
     class Meta:
         unique_together = ('title', 'firstname', 'lastname',)
