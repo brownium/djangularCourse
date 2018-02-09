@@ -2,7 +2,7 @@
     <button ng-click="logout()">Logout</button>
 </div>
 <div class="list" ng-repeat="list in data">
-    <h3>{{ list.name }}</h3>
+    <h3>{{ list.lastname }}, {{ list.title }} {{ list.firstname }}</h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">

@@ -21,6 +21,7 @@
         };
 
         //Login.redirectIfNotLoggedIn();
+        $scope.isLoggedIn = Login.isLoggedIn();
         $scope.data = [];
         $scope.logout = Login.logout;
         $scope.sortBy="title";
