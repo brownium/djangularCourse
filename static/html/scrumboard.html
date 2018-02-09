@@ -1,8 +1,8 @@
-<div class="logout">
+<div class="auth-buttons" ng-show="isLoggedIn">
     <button ng-click="logout()">Logout</button>
-    <br>
-        Logged In?  {{ isLoggedIn }}
-    <br>
+</div>
+<div class="auth-buttons" ng-hide="isLoggedIn">
+    <a href="#/login"><button>Login</button></a>
 </div>
 <div class="list" ng-repeat="list in data">
     <h3><a href="#/author/{{list.id}}">{{ list.lastname }} {{ list.title }} {{ list.firstname }}<a></h3>

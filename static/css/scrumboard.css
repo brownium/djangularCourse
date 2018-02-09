@@ -63,7 +63,7 @@ ul {
     resize: vertical;
 }
 
-.logout, .show-filters {
+.auth-buttons, .show-filters {
     float: right;
 }
 
