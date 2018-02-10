@@ -4,15 +4,18 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class List(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
-    firstname = models.CharField(max_length=50, null=True, blank=True)
+    firstname = models.CharField(max_length=50, null=False, blank=False)
     lastname = models.CharField(max_length=50, null=True, blank=True)
     about = models.CharField(max_length=5000, null=True, blank=True)
 
     def __str__(self):
-        return "%s, %s" % (self.lastname, self.firstname)
+        if self.lastname:
+            return "%s, %s" % (self.lastname, self.firstname)
+        else:
+            return self.firstname
 
     class Meta:
-        unique_together = ('title', 'firstname', 'lastname',)
+        unique_together = ('firstname', 'lastname',)
         ordering = ['lastname']
 
 
