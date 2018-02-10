@@ -5,7 +5,7 @@
     <a href="#/login"><button>Login</button></a>
 </div>
 <div class="list" ng-repeat="list in data">
-    <h3><a href="#/author/{{list.id}}">{{ list.lastname }} {{ list.title }} {{ list.firstname }}<a></h3>
+    <h3><a href="#/author/{{list.id}}">{{ list.lastname }}, {{ list.title }} {{ list.firstname }}</a></h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">
@@ -23,7 +23,7 @@
                             <option value="category">Category</option>
                             <option value="text">Text</option>
                         </select>
-                        <input type="checkbox" ng-model="reverse">
+                        <input type="checkbox" ng-model="reverse"/>
                         <label>Reverse</label>
                     </td>
                 </tr>
