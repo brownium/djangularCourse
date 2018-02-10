@@ -1,6 +1,6 @@
 <div class="card" ng-hide="edit" ng-click="edit=true">
-    <h4>{{ card.title }}</h4>
-    <span class="description">{{ card.description }}</span>
+    <h4>{{ card.category }}</h4>
+    <span class="description">{{ card.text }}</span>
 </div>
 
 <div class="card" ng-show="edit"
@@ -11,7 +11,7 @@
             ng-model="card.title"
             //ng-change="update()" />
     </div>
-    <textarea ng-model="card.description"
+    <textarea ng-model="card.text"
         //ng-change="update()"
         placeholder="Enter Quote: " ></textarea>
     <div>

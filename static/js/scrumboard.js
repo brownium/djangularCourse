@@ -24,7 +24,7 @@
         $scope.isLoggedIn = Login.isLoggedIn();
         $scope.data = [];
         $scope.logout = Login.logout;
-        $scope.sortBy="title";
+        $scope.sortBy="category";
         $scope.reverse=false;
         $scope.showFilters=false;
 
