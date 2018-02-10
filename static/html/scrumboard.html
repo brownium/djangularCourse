@@ -4,10 +4,10 @@
 <div class="auth-buttons" ng-hide="isLoggedIn">
     <a href="#/login"><button>Login</button></a>
 </div>
-<div class="searchAuthor">
-    Search Author: <input type="text" ng-model="searchAuthor"/>
+<div class="searchAll">
+    Search: <input type="text" ng-model="searchAll"/>
 </div>
-<div class="list" ng-repeat="list in data | filter:searchAuthor">
+<div class="list" ng-repeat="list in data | filter:searchAll">
     <h3><a href="#/author/{{list.id}}">{{ list.lastname }}, {{ list.title }} {{ list.firstname }}</a></h3>
 
     <span class="show-filters">
@@ -38,7 +38,7 @@
         </hr>
     </div>
     <ul>
-        <li ng-repeat="card in list.cards | filter:filterBy | orderBy:sortBy:reverse">
+        <li ng-repeat="card in list.cards | filter:filterBy | filter:searchAll | orderBy:sortBy:reverse">
             <scrumboard-card></scrumboard-card>
         </li>
     </ul>
