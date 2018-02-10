@@ -24,4 +24,4 @@ class Card(models.Model):
     business_value = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return "%s: %s" % (self.list.lastname, self.category)
+        return "%s: %s - %s..." % (self.list.lastname, self.category, self.text[:50])
