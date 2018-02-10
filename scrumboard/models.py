@@ -9,10 +9,11 @@ class List(models.Model):
     about = models.CharField(max_length=5000, null=True, blank=True)
 
     def __str__(self):
-        return "%s %s" % (self.firstname, self.lastname)
+        return "%s, %s" % (self.lastname, self.firstname)
 
     class Meta:
         unique_together = ('title', 'firstname', 'lastname',)
+        ordering = ['lastname']
 
 
 @python_2_unicode_compatible
@@ -25,3 +26,6 @@ class Card(models.Model):
 
     def __str__(self):
         return "%s: %s - %s..." % (self.list.lastname, self.category, self.text[:50])
+
+    class Meta:
+        ordering = ['list', 'category']
