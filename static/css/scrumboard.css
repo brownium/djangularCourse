@@ -23,6 +23,14 @@ ul {
     padding: 0;
 }
 
+.searchAuthor {
+    cursor: pointer;
+    background-color: #2A9FBC;
+    padding: 7px;
+    margin: 7px;
+    width: 20%;
+}
+
 .card {
     cursor: pointer;
     background-color: #404040;
