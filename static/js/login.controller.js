@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('scrumboard.demo')
+        .module('quotemod')
         .controller('LoginController',
             ['$scope', '$http', '$location', 'Login', LoginController]);
 

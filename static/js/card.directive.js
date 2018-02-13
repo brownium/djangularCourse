@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('scrumboard.demo')
+    angular.module('quotemod')
         .directive('scrumboardCard', CardDirective);
 
     function CardDirective() {

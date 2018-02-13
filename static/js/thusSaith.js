@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('scrumboard.demo', ['ngRoute'])
+    angular.module('quotemod', ['ngRoute'])
         .controller('ScrumboardController',
             [ '$scope', '$http', '$routeParams', 'Login', ScrumboardController]);
 

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('scrumboard.demo')
+        .module('quotemod')
         .service('Login', ['$http', '$location', Login])
 
     function Login($http, $location) {

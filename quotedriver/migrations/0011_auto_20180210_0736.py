@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('scrumboard', '0010_auto_20180210_0447'),
+        ('quotedriver', '0010_auto_20180210_0447'),
     ]
 
     operations = [

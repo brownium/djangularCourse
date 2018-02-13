@@ -1,14 +1,14 @@
 (function () {
     'use strict';
 
-    angular.module('scrumboard.demo')
+    angular.module('quotemod')
         .config(['$routeProvider', config])
         .run(['$http', run]);
 
     function config($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: '/static/html/scrumboard.html',
+                templateUrl: '/static/html/thusSaith.html',
                 controller: 'ScrumboardController',
             })
             .when('/edit', {

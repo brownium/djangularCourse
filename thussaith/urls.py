@@ -1,4 +1,4 @@
-"""djangular URL Configuration
+"""thussaith URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -22,6 +22,6 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', ensure_csrf_cookie(TemplateView.as_view(template_name="home.html"))),
-    url(r'^scrumboard/', include('scrumboard.urls')),
+    url(r'^scrumboard/', include('quotedriver.urls')),
     url(r'^auth_api/', include('auth_api.urls')),
 ]
