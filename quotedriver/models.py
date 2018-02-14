@@ -22,7 +22,7 @@ class Author(models.Model):
 @python_2_unicode_compatible
 class Quote(models.Model):
     category = models.CharField(max_length=30)
-    text = models.TextField(max_length=1000)
+    text = models.TextField(max_length=10000)
     author = models.ForeignKey(Author, related_name="quotes")
 
     def __str__(self):
