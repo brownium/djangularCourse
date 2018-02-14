@@ -9,7 +9,7 @@
             templateUrl: '/static/html/card.html',
             //restrict: 'E',
             controller: ['$scope', '$http', function($scope, $http) {
-                var url = '/scrumboard/cards/' + $scope.card.id + '/';
+                var url = '/quotedriver/cards/' + $scope.card.id + '/';
                 $scope.destList = $scope.list;
                 // $scope.update = function() {
                 //     return $http.put(

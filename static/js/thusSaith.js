@@ -11,7 +11,7 @@
                 list: list.id,
                 title: title
             };
-            $http.post('/scrumboard/cards/', card)
+            $http.post('/quotedriver/cards/', card)
                 .then(function(response){
                     list.cards.push(response.data);
                 },
@@ -28,7 +28,7 @@
         $scope.reverse=false;
         $scope.showFilters=false;
 
-        $http.get('/scrumboard/lists/')
+        $http.get('/quotedriver/lists/')
             .then(function(response){
                 $scope.data = response.data;
                 if ($routeParams.authorID) {
