@@ -1,7 +1,7 @@
 <div class="logout">
     <button ng-click="logout()">Logout</button>
 </div>
-<div class="list">
+<div class="author">
     <h3>{{ data.lastname }}, {{ data.title }} {{ data.firstname }}</h3>
 
     <span class="show-filters">
@@ -9,7 +9,7 @@
             {{ showFilters ? "Hide" : "Show" }} filters
         </button>
     </span>
-    <div class="list-sort"
+    <div class="author-sort"
         ng-show="showFilters">
         <hr>
             <table>

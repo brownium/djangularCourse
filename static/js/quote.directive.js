@@ -10,7 +10,7 @@
             //restrict: 'E',
             controller: ['$scope', '$http', function($scope, $http) {
                 var url = '/quotedriver/quotes/' + $scope.quote.id + '/';
-                $scope.destList = $scope.list;
+                $scope.destAuthor = $scope.author;
                 // $scope.update = function() {
                 //     return $http.put(
                 //         url,
@@ -18,8 +18,8 @@
                 //     );
                 // };
 
-                function removeQuoteFromList(quote, list) {
-                    var quotes = list.quotes;
+                function removeQuoteFromAuthor(quote, author) {
+                    var quotes = author.quotes;
                     quotes.splice(
                         quotes.indexOf(quote),
                         1
@@ -29,7 +29,7 @@
                 $scope.delete = function() {
                     $http.delete(url).then(
                         function(){
-                            removeQuoteFromList($scope.quote, $scope.list);
+                            removeQuoteFromAuthor($scope.quote, $scope.author);
                         }
                     );
                 };
@@ -39,14 +39,14 @@
                 };
 
                 $scope.move = function() {
-                    if ($scope.destList === undefined) {
+                    if ($scope.destAuthor === undefined) {
                         return;
                     }
-                    $scope.quote.list = $scope.destList.id;
+                    $scope.quote.author = $scope.destAuthor.id;
                     $scope.update().then(function() {
                         {
-                            removeQuoteFromList($scope.quote, $scope.list);
-                            $scope.destList.quotes.push($scope.quote);
+                            removeQuoteFromAuthor($scope.quote, $scope.author);
+                            $scope.destAuthor.quotes.push($scope.quote);
                         }
                     });
                 }

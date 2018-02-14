@@ -1,12 +1,12 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
 
-from .serializers import ListSerializer, QuoteSerializer
-from .models import List, Quote
+from .serializers import AuthorSerializer, QuoteSerializer
+from .models import Author, Quote
 
-class ListViewSet(ModelViewSet):
-    queryset = List.objects.all()
-    serializer_class = ListSerializer
+class AuthorViewSet(ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
     #permission_classes = (permissions.IsAuthenticated,)
 
 

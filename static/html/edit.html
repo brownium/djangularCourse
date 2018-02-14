@@ -1,15 +1,15 @@
 <div class="logout">
     <button ng-click="logout()">Logout</button>
 </div>
-<div class="list" ng-repeat="list in data">
-    <h3>{{ list.lastname }}, {{ list.title }} {{ list.firstname }}</h3>
+<div class="author" ng-repeat="author in data">
+    <h3>{{ author.lastname }}, {{ author.title }} {{ author.firstname }}</h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">
             {{ showFilters ? "Hide" : "Show" }} filters
         </button>
     </span>
-    <div class="list-sort"
+    <div class="author-sort"
         ng-show="showFilters">
         <hr>
             <table>
@@ -33,12 +33,12 @@
         </hr>
     </div>
     <ul>
-        <li ng-repeat="quote in list.quotes | filter:filterBy | orderBy:sortBy:reverse">
+        <li ng-repeat="quote in author.quotes | filter:filterBy | orderBy:sortBy:reverse">
             <quotedriver-quote></quotedriver-quote>
         </li>
     </ul>
     <div class="flex">
         <input type="text" ng-model="new_title" />
-        <button ng-click="add(list, new_title)">+</button>
+        <button ng-click="add(author, new_title)">+</button>
     </div>
 </div>

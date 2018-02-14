@@ -7,15 +7,15 @@
 <div class="searchAll">
     Search: <input type="text" ng-model="searchAll"/>
 </div>
-<div class="list" ng-repeat="list in data | filter:searchAll">
-    <h3><a href="#/author/{{list.id}}">{{ list.lastname }}{{ list.lastname ? "," : "" }} {{ list.title }} {{ list.firstname }}</a></h3>
+<div class="author" ng-repeat="author in data | filter:searchAll">
+    <h3><a href="#/author/{{author.id}}">{{ author.lastname }}{{ author.lastname ? "," : "" }} {{ author.title }} {{ author.firstname }}</a></h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">
             {{ showFilters ? "Hide" : "Show" }} filters
         </button>
     </span>
-    <div class="list-sort"
+    <div class="author-sort"
         ng-show="showFilters">
         <hr>
             <table>
@@ -38,7 +38,7 @@
         </hr>
     </div>
     <ul>
-        <li ng-repeat="quote in list.quotes | filter:filterBy | filter:searchAll | orderBy:sortBy:reverse">
+        <li ng-repeat="quote in author.quotes | filter:filterBy | filter:searchAll | orderBy:sortBy:reverse">
             <quotedriver-quote></quotedriver-quote>
         </li>
     </ul>

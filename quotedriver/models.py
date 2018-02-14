@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
 @python_2_unicode_compatible
-class List(models.Model):
+class Author(models.Model):
     title = models.CharField(max_length=50, null=True, blank=True)
     firstname = models.CharField(max_length=50, null=False, blank=False)
     lastname = models.CharField(max_length=50, null=True, blank=True)
@@ -23,10 +23,10 @@ class List(models.Model):
 class Quote(models.Model):
     category = models.CharField(max_length=30)
     text = models.TextField(max_length=1000)
-    list = models.ForeignKey(List, related_name="quotes")
+    author = models.ForeignKey(Author, related_name="quotes")
 
     def __str__(self):
-        return "%s: %s - %s..." % (self.list.lastname, self.category, self.text[:50])
+        return "%s: %s - %s..." % (self.author.lastname, self.category, self.text[:50])
 
     class Meta:
-        ordering = ['list', 'category']
+        ordering = ['author', 'category']

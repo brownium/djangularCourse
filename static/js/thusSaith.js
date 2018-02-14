@@ -6,14 +6,14 @@
             [ '$scope', '$http', '$routeParams', 'Login', QuoteDriverController]);
 
     function QuoteDriverController($scope, $http, $routeParams, Login) {
-        $scope.add = function (list, title) {
+        $scope.add = function (author, title) {
             var quote = {
-                list: list.id,
+                author: author.id,
                 title: title
             };
             $http.post('/quotedriver/quotes/', quote)
                 .then(function(response){
-                    list.quotes.push(response.data);
+                    author.quotes.push(response.data);
                 },
                 function(){
                     alert('Could not create quote');
@@ -28,7 +28,7 @@
         $scope.reverse=false;
         $scope.showFilters=false;
 
-        $http.get('/quotedriver/lists/')
+        $http.get('/quotedriver/authors/')
             .then(function(response){
                 $scope.data = response.data;
                 if ($routeParams.authorID) {

@@ -15,9 +15,9 @@
         //ng-change="update()"
         placeholder="Enter Quote: " ></textarea>
     <div>
-        <label>List: </label>
-        <select ng-options="list as list.lastname for list in data"
-            ng-model="destList"></select>
+        <label>Author: </label>
+        <select ng-options="author as author.lastname for author in data"
+            ng-model="destAuthor"></select>
         <button ng-click="move()">Move</button>
     </div>
     <button ng-click="edit=false">Close</button>
