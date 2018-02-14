@@ -9,15 +9,15 @@
         $routeProvider
             .when('/', {
                 templateUrl: '/static/html/thusSaith.html',
-                controller: 'ScrumboardController',
+                controller: 'QuoteDriverController',
             })
             .when('/edit', {
                 templateUrl: '/static/html/edit.html',
-                controller: 'ScrumboardController',
+                controller: 'QuoteDriverController',
             })
             .when('/author/:authorID', {
                 templateUrl: '/static/html/author.html',
-                controller: 'ScrumboardController',
+                controller: 'QuoteDriverController',
             })
             .when('/login', {
                 templateUrl: '/static/html/login.html',

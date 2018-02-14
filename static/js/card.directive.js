@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('quotemod')
-        .directive('scrumboardCard', CardDirective);
+        .directive('quotedriverCard', CardDirective);
 
     function CardDirective() {
         return {

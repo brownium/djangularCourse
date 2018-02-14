@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('quotemod', ['ngRoute'])
-        .controller('ScrumboardController',
-            [ '$scope', '$http', '$routeParams', 'Login', ScrumboardController]);
+        .controller('QuoteDriverController',
+            [ '$scope', '$http', '$routeParams', 'Login', QuoteDriverController]);
 
-    function ScrumboardController($scope, $http, $routeParams, Login) {
+    function QuoteDriverController($scope, $http, $routeParams, Login) {
         $scope.add = function (list, title) {
             var card = {
                 list: list.id,
