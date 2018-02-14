@@ -24,8 +24,6 @@ class Card(models.Model):
     category = models.CharField(max_length=30)
     text = models.TextField(max_length=1000)
     list = models.ForeignKey(List, related_name="cards")
-    story_points = models.IntegerField(null=True, blank=True)
-    business_value = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return "%s: %s - %s..." % (self.list.lastname, self.category, self.text[:50])
