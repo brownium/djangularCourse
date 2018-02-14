@@ -33,8 +33,8 @@
         </hr>
     </div>
     <ul>
-        <li ng-repeat="card in data.cards | filter:filterBy | orderBy:sortBy:reverse">
-            <quotedriver-card></quotedriver-card>
+        <li ng-repeat="quote in data.quotes | filter:filterBy | orderBy:sortBy:reverse">
+            <quotedriver-quote></quotedriver-quote>
         </li>
     </ul>
 </div>

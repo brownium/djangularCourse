@@ -31,7 +31,7 @@ ul {
     width: 20%;
 }
 
-.card {
+.quote {
     cursor: pointer;
     background-color: #404040;
     padding: 7px;
@@ -39,7 +39,7 @@ ul {
     color: white;
 }
 
-.card h4 {
+.quote h4 {
     margin: 0px;
 }
 
@@ -59,14 +59,14 @@ ul {
   flex-basis: auto;
 }
 
-.card button,
-.card input,
-.card textarea {
+.quote button,
+.quote input,
+.quote textarea {
     color: #404040;
     margin: 2px 0px;
 }
 
-.card textarea {
+.quote textarea {
     width: 100%;
     resize: vertical;
 }

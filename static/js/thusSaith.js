@@ -7,16 +7,16 @@
 
     function QuoteDriverController($scope, $http, $routeParams, Login) {
         $scope.add = function (list, title) {
-            var card = {
+            var quote = {
                 list: list.id,
                 title: title
             };
-            $http.post('/quotedriver/cards/', card)
+            $http.post('/quotedriver/quotes/', quote)
                 .then(function(response){
-                    list.cards.push(response.data);
+                    list.quotes.push(response.data);
                 },
                 function(){
-                    alert('Could not create card');
+                    alert('Could not create quote');
                 });
         };
 

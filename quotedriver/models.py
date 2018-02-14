@@ -20,10 +20,10 @@ class List(models.Model):
 
 
 @python_2_unicode_compatible
-class Card(models.Model):
+class Quote(models.Model):
     category = models.CharField(max_length=30)
     text = models.TextField(max_length=1000)
-    list = models.ForeignKey(List, related_name="cards")
+    list = models.ForeignKey(List, related_name="quotes")
 
     def __str__(self):
         return "%s: %s - %s..." % (self.list.lastname, self.category, self.text[:50])

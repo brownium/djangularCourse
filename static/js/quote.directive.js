@@ -2,26 +2,26 @@
     'use strict';
 
     angular.module('quotemod')
-        .directive('quotedriverCard', CardDirective);
+        .directive('quotedriverQuote', QuoteDirective);
 
-    function CardDirective() {
+    function QuoteDirective() {
         return {
-            templateUrl: '/static/html/card.html',
+            templateUrl: '/static/html/quote.html',
             //restrict: 'E',
             controller: ['$scope', '$http', function($scope, $http) {
-                var url = '/quotedriver/cards/' + $scope.card.id + '/';
+                var url = '/quotedriver/quotes/' + $scope.quote.id + '/';
                 $scope.destList = $scope.list;
                 // $scope.update = function() {
                 //     return $http.put(
                 //         url,
-                //         $scope.card
+                //         $scope.quote
                 //     );
                 // };
 
-                function removeCardFromList(card, list) {
-                    var cards = list.cards;
-                    cards.splice(
-                        cards.indexOf(card),
+                function removeQuoteFromList(quote, list) {
+                    var quotes = list.quotes;
+                    quotes.splice(
+                        quotes.indexOf(quote),
                         1
                     );
                 }
@@ -29,7 +29,7 @@
                 $scope.delete = function() {
                     $http.delete(url).then(
                         function(){
-                            removeCardFromList($scope.card, $scope.list);
+                            removeQuoteFromList($scope.quote, $scope.list);
                         }
                     );
                 };
@@ -42,11 +42,11 @@
                     if ($scope.destList === undefined) {
                         return;
                     }
-                    $scope.card.list = $scope.destList.id;
+                    $scope.quote.list = $scope.destList.id;
                     $scope.update().then(function() {
                         {
-                            removeCardFromList($scope.card, $scope.list);
-                            $scope.destList.cards.push($scope.card);
+                            removeQuoteFromList($scope.quote, $scope.list);
+                            $scope.destList.quotes.push($scope.quote);
                         }
                     });
                 }

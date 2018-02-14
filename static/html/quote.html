@@ -1,17 +1,17 @@
-<div class="card" ng-hide="edit" ng-click="edit=true">
-    <h4>{{ card.category }}</h4>
-    <span class="description">{{ card.text }}</span>
+<div class="quote" ng-hide="edit" ng-click="edit=true">
+    <h4>{{ quote.category }}</h4>
+    <span class="description">{{ quote.text }}</span>
 </div>
 
-<div class="card" ng-show="edit"
+<div class="quote" ng-show="edit"
     ng-model-options="modelOptions">
     <div class="flex">
         <label><strong>Title:&nbsp;</strong></label>
         <input type="text"
-            ng-model="card.title"
+            ng-model="quote.title"
             //ng-change="update()" />
     </div>
-    <textarea ng-model="card.text"
+    <textarea ng-model="quote.text"
         //ng-change="update()"
         placeholder="Enter Quote: " ></textarea>
     <div>
@@ -21,5 +21,5 @@
         <button ng-click="move()">Move</button>
     </div>
     <button ng-click="edit=false">Close</button>
-    <button ng-click="delete()">Delete Card</button>
+    <button ng-click="delete()">Delete Quote</button>
 </div>

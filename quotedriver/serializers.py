@@ -1,14 +1,14 @@
 from rest_framework import serializers
 
-from .models import List, Card
+from .models import List, Quote
 
-class CardSerializer(serializers.ModelSerializer):
+class QuoteSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Card
+        model = Quote
 
 class ListSerializer(serializers.ModelSerializer):
-    cards = CardSerializer(read_only=True, many=True)
+    quotes = QuoteSerializer(read_only=True, many=True)
 
     class Meta:
         model = List
