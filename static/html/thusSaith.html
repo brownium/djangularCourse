@@ -1,45 +1,48 @@
-<div class="auth-buttons" ng-show="isLoggedIn">
-    <button ng-click="logout()">Logout</button>
-</div>
-<div class="auth-buttons" ng-hide="isLoggedIn">
-    <a href="#/login"><button>Login</button></a>
-</div>
-<div class="searchAll">
-    Search: <input type="text" ng-model="searchAll"/>
-</div>
-<div class="author" ng-repeat="author in data | filter:searchAll">
-    <h3><a href="#/author/{{author.id}}">{{ author.lastname }}{{ author.lastname ? "," : "" }} {{ author.title }} {{ author.firstname }}</a></h3>
-
-    <span class="show-filters">
-        <button ng-click="showFilters=!showFilters">
-            {{ showFilters ? "Hide" : "Show" }} filters
-        </button>
-    </span>
-    <div class="author-sort"
-        ng-show="showFilters">
-        <hr>
-            <table>
-                <tr>
-                    <td><label>Sort: </lable></td>
-                    <td>
-                        <select ng-model="sortBy">
-                            <option value="category">Category</option>
-                            <option value="text">Text</option>
-                        </select>
-                        <input type="checkbox" ng-model="reverse"/>
-                        <label>Reverse</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Filter: </label></td>
-                    <td class="flex"><input type="text" ng-model="filterBy"/></td>
-                </tr>
-            </table>
-        </hr>
+<div class="row">
+    <div class="left">
+        <div class="searchAll">
+            Search: <input type="text" ng-model="searchAll"/>
+        </div>
+        <div class="authorlist" ng-repeat="author in data | filter:searchAll">
+            <h3><a href="#/author/{{author.id}}">{{ author.lastname }}{{ author.lastname ? "," : "" }} {{ author.title }} {{ author.firstname }}</a></h3>
+        </div>
     </div>
-    <ul>
-        <li ng-repeat="quote in author.quotes | filter:filterBy | filter:searchAll | orderBy:sortBy:reverse">
-            <quotedriver-quote></quotedriver-quote>
-        </li>
-    </ul>
+    <div class="right">
+        <div class="author" ng-repeat="author in data | filter:searchAll">
+            <h3><a href="#/author/{{author.id}}">{{ author.lastname }}{{ author.lastname ? "," : "" }} {{ author.title }} {{ author.firstname }}</a></h3>
+
+            <span class="show-filters">
+                <button ng-click="showFilters=!showFilters">
+                    {{ showFilters ? "Hide" : "Show" }} filters
+                </button>
+            </span>
+            <div class="author-sort"
+                ng-show="showFilters">
+                <hr>
+                    <table>
+                        <tr>
+                            <td><label>Sort: </lable></td>
+                            <td>
+                                <select ng-model="sortBy">
+                                    <option value="category">Category</option>
+                                    <option value="text">Text</option>
+                                </select>
+                                <input type="checkbox" ng-model="reverse"/>
+                                <label>Reverse</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Filter: </label></td>
+                            <td class="flex"><input type="text" ng-model="filterBy"/></td>
+                        </tr>
+                    </table>
+                </hr>
+            </div>
+            <ul>
+                <li ng-repeat="quote in author.quotes | filter:filterBy | filter:searchAll | orderBy:sortBy:reverse">
+                    <quotedriver-quote></quotedriver-quote>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
